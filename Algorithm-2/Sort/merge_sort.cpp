@@ -1,26 +1,24 @@
 
-// 归并排序
+
 #include <iostream>
 using namespace std;
 
-void merge(int r[], int tmp[], int s, int m, int e) //归并过程
-{
+
+// 归并排序
+void merge(int r[], int tmp[], int s, int m, int e) {  //归并过程
     int k = 0;
     int i = s, j = m + 1;
 
-    while (i <= m && j <= e)
-    {
-        if (r[i] < r[j])
+    while (i <= m && j <= e) {
+        if (r[i] < r[j]) 
             tmp[k++] = r[i++];
-        else
+        else 
             tmp[k++] = r[j++];
     }
-    while (i <= m)
-        tmp[k++] = r[i++];
-    while (j <= e)
-        tmp[k++] = r[j++];
+    while (i <= m) tmp[k++] = r[i++];
+    while (j <= e) tmp[k++] = r[j++];
 
-    for (int i = 0; i <= e - s; i++)
+    for (int i = 0; i <= e - s; i++) 
         r[s + i] = tmp[i];
 }
 
@@ -32,6 +30,9 @@ void  mergesort(int A[], int T[], int s, int e) {
         merge(A, T, s, m, e);
     }
 }
+
+
+
 
 int main() {
     int n;

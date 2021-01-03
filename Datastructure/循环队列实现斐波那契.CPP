@@ -1,5 +1,5 @@
-// 循环队列实现斐波那契数列
 
+// 循环队列实现斐波那契数列
 void getfib(int k, int n)
 {
     InitQueue(Q);

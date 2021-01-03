@@ -1,4 +1,4 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 const int maxn = 10;
@@ -7,18 +7,17 @@ bool book[maxn];
 int n, cnt = 0;
 
 void dfs(int step) {
-    if(step == n) {
-        cnt ++;
-        for(int i = 0; i < n; ++i)
+    if (step == n) {
+        cnt++;
+        for (int i = 0; i < n; ++i)
             cout << a[i];
         cout << endl;
     }
-
-    for(int i = 1; i <= n; ++i) { 
-        if(!book[i]) {
+    for (int i = 1; i <= n; ++i) {
+        if (!book[i]) {
             a[step] = i;
             book[i] = true;
-            dfs(step+1);
+            dfs(step + 1);
             book[i] = false;
         }
     }
@@ -32,4 +31,3 @@ int main() {
     cout << cnt << endl;
     return 0;
 }
-

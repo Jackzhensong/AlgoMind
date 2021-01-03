@@ -1,45 +1,39 @@
 
  //快速排序，不稳定算法
+ void Quicksort(int *A, int s, int e) {
+     if (s < e) {
+         int k = A[s];
+         int i = s, j = e;
+         while (i < j) {
+             while (i < j && A[j] >= k) --j;
+             swap(A[i], A[j]);
 
-void Quicksort(int* A, int s, int e){
-    //if(s >= e) return;
-    if(s < e) {
-    int k = A[s];
-    int i = s, j = e;
-    while(i < j) {
-        while(i < j && A[j] >= k)   --j;
-        swap(A[i], A[j]);
+             while (i < j && A[i] <= k) ++i;
+             swap(A[i], A[j]);
+         }
+         Quicksort(A, s, i - 1);
+         Quicksort(A, i + 1, e);
+     }
+     return;
+ }
 
-        while(i < j && A[i] <= k)    ++i;
-        swap(A[i], A[j]);
-    }
+ void Quicksort(int *A, int low, int high) {
+     if (low < high) {
+         int k = A[low];
+         int i = low, j = high;
+         while (i < j) {
+             while (i < j && A[j] >= k) --j;
+             A[i] = A[j];
 
-    Quicksort(A, s, i-1);
-    Quicksort(A, i+1, e);
-    }
-    return;
-}
-
-void Quicksort(int* A, int low, int high){
-    if(low < high) {
-    int k = A[low];
-    int i = low, j = high;
-    while(i < j) {
-        while(i < j && A[j] >= k)   --j;
-        A[i] = A[j];
-
-        while(i < j && A[i] <= k)    ++i;
-        A[j] = A[i];
-    }
-    A[i] = k;
-    
-    Quicksort(A, low, i-1);
-    Quicksort(A, i+1, high);
-    }
-    return;
-}
-
-
+             while (i < j && A[i] <= k) ++i;
+             A[j] = A[i];
+         }
+         A[i] = k;
+         Quicksort(A, low, i - 1);
+         Quicksort(A, i + 1, high);
+     }
+     return;
+ }
 
 /*
 #include<iostream>

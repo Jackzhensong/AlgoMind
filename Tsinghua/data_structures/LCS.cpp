@@ -1,14 +1,11 @@
-
 ///// 最长公共子序列(LCS) /////
- 
 // 输出所有的最长公共子序列 
-
 #include <bits/stdc++.h>
 using namespace std;
 
 string X;
 string Y;
-vector<vector<int> > c;     // 动态规划表
+vector< vector<int> > c;     // 动态规划表
 set<string> lcs;            // set 保存所有的 lcs
 
 int lcs_length(int m, int n) {

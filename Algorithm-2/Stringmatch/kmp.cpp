@@ -38,8 +38,7 @@ int Findnext(string p)
     k = -1;
     while (j < m - 1)
     {
-        while (k >= 0 && p[k] != p[j])
-            k = next[k];
+        while (k >= 0 && p[k] != p[j]) k = next[k];
         j++;
         k++;
         next[j] = k;
@@ -58,8 +57,7 @@ int Findnext(string p)
     k = -1;
     while (j < m - 1)
     {
-        while (k >= 0 && p[k] != p[j])
-            k = next[k];
+        while (k >= 0 && p[k] != p[j]) k = next[k];
         j++;
         k++;
         if (p[k] == p[j])

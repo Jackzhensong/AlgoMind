@@ -2,21 +2,20 @@
 #include <iostream>
 using namespace std;
 
-int strlen(const char * s) 
-{	int i = 0;
-	for(; s[i]; ++i);
+
+int strlen(const char * s) {	
+	int i = 0;
+	for( ; s[i]; ++i);
 	return i;
 }
-void strcpy(char * d,const char * s)
-{
-	int i = 0;
-	for( i = 0; s[i]; ++i)
+
+void strcpy(char * d, const char * s) {
+	for(int i = 0; s[i]; ++i) 
 		d[i] = s[i];
-	d[i] = 0;
-		
+	// d[i] = 0;
 }
-int strcmp(const char * s1,const char * s2)
-{
+
+int strcmp(const char * s1, const char * s2) {
 	for(int i = 0; s1[i] && s2[i] ; ++i) {
 		if( s1[i] < s2[i] )
 			return -1;
@@ -25,11 +24,13 @@ int strcmp(const char * s1,const char * s2)
 	}
 	return 0;
 }
-void strcat(char * d,const char * s)
-{
+
+void strcat(char * d, const char * s) {
 	int len = strlen(d);
-	strcpy(d+len,s);
+	strcpy(d + len, s);
 }
+
+
 
 class MyString
 {
@@ -131,6 +132,25 @@ class MyString
 // 在此处补充你的代码
 };
 
+CMyString &CMyString::operator = (const CMyString &str) {
+    if (this == &str) return *this;
+    delete[] m_pdata;
+    m_pdata = NULL;
+    m_pdata = new char[strlen(str.m_pdata) + 1];
+    strcpy(m_pdata, str.m_pdata);
+    return *this;
+}
+
+CMyString &CMyString::operator = (const CMyString &str) {
+    if (this != &str) {
+        CMyString strTemp(str);
+
+        char *pTemp = strTemp.m_pdata;
+        strTemp.m_pdata = m_pdata;
+        m_pdata = pTemp;
+    }
+    return *this;
+}
 
 int CompareString( const void * e1, const void * e2)
 {

@@ -3,6 +3,10 @@
 #include <iostream>
 using namespace std;
 
+const int maxn = 10000;
+char c[maxn], t[maxn];
+int m;
+
 void mult(char c[], char t[], int m) {
     int flag, i, k, len, add = 0;
     char s[100];
@@ -34,9 +38,6 @@ void mult(char c[], char t[], int m) {
         t[len] = '\0';
 }
 
-const int maxn = 10000;
-char c[maxn], t[maxn];
-int m;
 
 int main() {
     cin >> c;

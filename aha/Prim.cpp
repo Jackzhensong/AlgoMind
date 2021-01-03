@@ -4,21 +4,21 @@ using namespace std;
 const int maxn = 1e9;
 int main() {
     int n, m, a, b, c;
-    int e[10][10], dis[10], book[10] = {0};
     int num = 0, sum = 0;
-
+    int e[10][10], dis[10], book[10] = {0};
     cin >> n >> m;
+    
     for(int i = 1; i <= n; ++i) 
-        for(int j = 1; j <= n; ++j) 
+        for(int j = 1; j <= n; ++j) {
             if(i == j) e[i][j] = 0;
             else e[i][j] = maxn;
+        }
     for(int i = 1; i <= m; ++i) {
         cin >> a >> b >> c;
         e[a][b] = c;
         e[b][a] = c;
     }
-    for(int i = 1; i <= n; ++i) 
-        dis[i] = e[1][i];
+    for(int i = 1; i <= n; ++i) dis[i] = e[1][i];
 
     // Prim
     book[1] = 1;

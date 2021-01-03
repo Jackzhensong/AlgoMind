@@ -3,15 +3,14 @@ using namespace std;
 
 int f[1000] = {0};
 int n, m, sum = 0;
-void init() {
-    for(int i = 1; i <= n; ++i) 
-        f[i] = i;
-    return;
 
+void init() {
+    for(int i = 1; i <= n; ++i) f[i] = i;   // 各自自成一派
+    return;
 }
+
 int getf(int v) {
-    if(f[v] == v)
-        return v;
+    if(f[v] == v)   return v;
     else {
         f[v] = getf(f[v]);
         return f[v];
@@ -34,8 +33,7 @@ int main() {
         merge(x, y);
     }
     for(int i = 1; i <= n; ++i){
-        if(f[i] == i) 
-            sum++;
+        if(f[i] == i) sum++;
     }
     cout << sum << endl;
     return 0;

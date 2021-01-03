@@ -11,6 +11,7 @@ void dfs(int i, int k) {
     if(color[i][k]) return;     // 剪枝
     ++roomArea;
     color[i][k] = roomNum;      // 染色
+    
     if((rooms[i][k] & 1) == 0) dfs(i, k-1);
     if((rooms[i][k] & 2) == 0) dfs(i-1, k);
     if((rooms[i][k] & 4) == 0) dfs(i, k+1);

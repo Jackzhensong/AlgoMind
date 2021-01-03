@@ -3,8 +3,7 @@
 using namespace std;
 
 struct edge {
-    int u;
-    int v;
+    int u, v;
     int w;
 };
 
@@ -19,18 +18,15 @@ void quicksort(int left, int right) {
     int i = left;
     int j = right;
     while(i != j) {
-        while(e[j].w >= e[left].w && i < j) 
-            j--;
-        while(e[i].w <= e[left].w && i < j) 
-            i++;
-        if(i < j) 
-            swap(e[i], e[j]);
+        while(e[j].w >= e[left].w && i < j) j--;
+        while(e[i].w <= e[left].w && i < j) i++;
+        if(i < j) swap(e[i], e[j]);
     }
     swap(e[left], e[i]);
 
     quicksort(left, i - 1);
     quicksort(i + 1, right);
-    return ;
+    // return ;
 }
 
 int getf(int v) {
@@ -55,8 +51,7 @@ int main() {
     for(int i = 1; i <= m; ++i) 
         cin >> e[i].u >> e[i].v >> e[i].w;
     quicksort(1, m);
-    for(int i = 1; i <= n; ++i) 
-        f[i] = i;
+    for(int i = 1; i <= n; ++i) f[i] = i;
     
     // Kruskal
     for(int i = 1; i <= m; ++i) {

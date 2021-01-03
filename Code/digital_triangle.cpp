@@ -1,21 +1,25 @@
 #include<bits/stdc++.h>
 using namespace std;
+
 const int maxn=101;
 int D[maxn][maxn];
 int n;
-int maxsum(int i,int j){
-    if(i==n) return D[i][j];
-    int x=maxsum(i+1,j);
-    int y=maxsum(i+1,j+1);
-    return max(x,y)+D[i][j];
+int maxsum(int i, int j)
+{
+    if (i == n)
+        return D[i][j];
+    int x = maxsum(i + 1, j);
+    int y = maxsum(i + 1, j + 1);
+    return max(x, y) + D[i][j];
 }
+
 int main()
 {
-    cin>>n;
-    for(int i=1;i<=n;i++)
-        for(int j=1;j<=i;j++)
-        cin>>D[i][j];
-    cout<<maxsum(1,1)<<endl;
+    cin >> n;
+    for (int i = 1; i <= n; i++)
+        for (int j = 1; j <= i; j++)
+            cin >> D[i][j];
+    cout << maxsum(1, 1) << endl;
     return 0;
 }
 
@@ -60,16 +64,17 @@ int main()
 
 //方法四，空间优化
 int *sum;
+
 int main()
 {
-    cin>>n;
-    for(int i=1;i<=n;i++)
-        for(int j=1;j<=i;j++)
-        cin>>D[i][j];
-    sum=D[n];   //sum指向第n行
-    for(int i=n-1;i>=1;i--)
-        for(int j=1;j<=i;j++)
-        sum[j]=max(sum[j],sum[j+1])+D[i][j];    //将求得值放到底N行
-    cout<<sum[1]<<endl;
+    cin >> n;
+    for (int i = 1; i <= n; i++)
+        for (int j = 1; j <= i; j++)
+            cin >> D[i][j];
+    sum = D[n]; //sum指向第n行
+    for (int i = n - 1; i >= 1; i--)
+        for (int j = 1; j <= i; j++)
+            sum[j] = max(sum[j], sum[j + 1]) + D[i][j]; //将求得值放到底N行
+    cout << sum[1] << endl;
     return 0;
 }
