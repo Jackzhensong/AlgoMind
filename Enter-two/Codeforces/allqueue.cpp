@@ -1,7 +1,7 @@
-#include<algorithm>
-#include<iostream>
-#include<cstdio>
-#include<cstring>
+#include <algorithm>
+#include <iostream>
+#include <cstdio>
+#include <cstring>
 using namespace std;
 
 /*char s[10];
@@ -40,7 +40,7 @@ int main()
 
 //#include <iostream>
 //using namespace std;
- 
+
 /*void FullArray(char *str, int m, int len)
 {
 	int i;
@@ -71,29 +71,26 @@ int main(void)
 
 void Permutation(char *str)
 {
-    int len=strlen(str);
-    sort(str, str+len);
-    do{
-        cout<<str<<endl;
-    }while(next_permutation(str, str + len));
-}
-int main()
-{
-    char str[10];
-    cin>>str;
-    Permutation(str);
-    return 0;
+    int len = strlen(str);
+    sort(str, str + len);
+    do
+    {
+        cout << str << endl;
+    } while (next_permutation(str, str + len));
 }
 
-bool permutation(char * str, int num)
+
+bool permutation(char *str, int num)
 {
     int i;
-    for(i = num -2; (i >= 0) && (str[i] >= str[i+1]); --i) ;
-    if(i < 0)
+    for (i = num - 2; (i >= 0) && (str[i] >= str[i + 1]); --i)
+        ;
+    if (i < 0)
         return false;
 
     int k;
-    for(k = num - 1; (k > i) && (str[k] >= str[i]); --k) ;
+    for (k = num - 1; (k > i) && (str[k] >= str[i]); --k)
+        ;
     swap(str[i], str[k]);
     reverse(str + i + 1, str + num);
     return true;

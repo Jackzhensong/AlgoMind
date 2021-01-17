@@ -81,6 +81,7 @@ class CHugeInt {
 	}
 // 在此处补充你的代码
 };
+
 int  main() 
 { 
 	char s[210];
@@ -99,6 +100,7 @@ int  main()
 		cout << b << endl;
 	}
 	return 0;
+}
 
 
 

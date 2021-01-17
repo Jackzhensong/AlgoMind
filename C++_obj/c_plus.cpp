@@ -1,26 +1,22 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-class Demo
-{
+class Demo {
     int id;
 
   public:
-    Demo(int i)
-    {
+    Demo(int i) {
         id = i;
         cout << "id=" << id << " constructed" << endl;
     }
-    ~Demo()
-    {
+    ~Demo() {
         cout << "id=" << id << " destructed" << endl;
     }
 };
 
 Demo d1(1);
 
-void func()
-{
+void func() {
     static Demo d2(2);
     Demo d3(3);
     cout << "func" << endl;

@@ -6,18 +6,18 @@ using namespace std;
 typedef char *HuffmanCode[2*M];
 typedef struct
 {
-        int weight;
-        int parent;
-        int LChild;
-        int RChild;
-        }HTNode,Huffman[M+1];
+    int weight;
+    int parent;
+    int LChild;
+    int RChild;
+} HTNode, Huffman[M + 1];
 
 typedef struct Node
 {
-        int weight;
-        char c; 
-        int num;
-        }WNode,WeightNode[N];
+    int weight;
+    char c;
+    int num;
+} WNode, WeightNode[N];
 
 void CreateWeight(char ch[],int *s,WeightNode CW,int *p)
 {

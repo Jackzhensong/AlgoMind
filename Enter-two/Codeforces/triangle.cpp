@@ -1,4 +1,5 @@
-#include <iostream>        //数字三角形
+//数字三角形
+#include <iostream>        
 #include <cstring>     
 #include<algorithm>
 using namespace std;

@@ -8,19 +8,12 @@ int n, m, num;
 void dfs(int x, int y, int step) {
     int next[8][2] = {{1, 2}, {2, 1}, {2, -1}, {1, -2}, {-1, -2}, {-2, -1}, {-2, 1}, {-1, 2}};
     int tx, ty;
-    /*bool p = true;
-    for(int i = 0; i < n; ++i)
-        for(int j = 0; j < m; ++j)
-            if(book[i][j] == 0) {
-                p = false;
-                break;
-            }
-    if(p == true) { 
-        num++; 
-        return;
+
+    if(step == n * m) { 
+        num++;  
+        return; 
     }
-    */
-    if(step == n * m) { num++;  return; }
+
     for(int k = 0; k < 8; ++k) {
         tx = x + next[k][0];
         ty = y + next[k][1];
@@ -47,3 +40,17 @@ int main() {
     }
     return 0;
 }
+
+
+    /*bool p = true;
+    for(int i = 0; i < n; ++i)
+        for(int j = 0; j < m; ++j)
+            if(book[i][j] == 0) {
+                p = false;
+                break;
+            }
+    if(p == true) { 
+        num++; 
+        return;
+    }
+    */

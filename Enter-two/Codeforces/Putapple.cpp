@@ -11,6 +11,7 @@ int putapple(int m, int n)
         return 0;
     return putapple(m, n - 1) + putapple(m - n, n);
 }
+
 int main()
 {
     int m, n, t;
