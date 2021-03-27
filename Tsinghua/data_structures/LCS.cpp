@@ -1,5 +1,7 @@
-///// 最长公共子序列(LCS) /////
+/* 最长公共子序列(LCS) */ 
+
 // 输出所有的最长公共子序列 
+
 #include <bits/stdc++.h>
 using namespace std;
 

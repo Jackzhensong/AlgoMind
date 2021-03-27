@@ -32,8 +32,6 @@ void  mergesort(int A[], int T[], int s, int e) {
 }
 
 
-
-
 int main() {
     int n;
     cin >> n;

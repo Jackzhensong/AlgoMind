@@ -1,4 +1,5 @@
 #include<iostream>
+#include <cstring>
 using namespace std;
 
 const int maxn = 1e8;
@@ -27,10 +28,10 @@ int main() {
             else e[i][j] = maxn;
     for(int i = 1; i <= m; ++i) {
         cin >> a >> b;
-        e[a][b] = 1;
-        e[b][a] = 1;
+        e[a][b] = e[b][a] = 1;
     }
 
+    memset(book, 0, sizeof(book));
     book[1] = 1;
     dfs(1);
     return 0;  

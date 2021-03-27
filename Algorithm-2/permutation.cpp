@@ -1,26 +1,29 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-/// 生成排列数 /// 
-void print_permutation(int n, int *A, int cur) {
-
-    if(cur == n) {
-        for(int i = 0; i < n; ++i)
+/// 生成排列数 ///
+void print_permutation(int n, int *A, int cur)
+{
+    if (cur == n)
+    {
+        for (int i = 0; i < n; ++i)
             printf("%d ", A[i]);
         printf("\n");
     }
 
-    else 
-    for(int i = 1; i <= n; ++i) {
-        int ok = 1;
-        for(int j = 0; j < cur; ++j)
-            if(A[j] == i) ok = 0;
-
-        if(ok) {
-            A[cur] = i;
-            print_permutation(n, A, cur + 1);
+    else
+        for (int i = 1; i <= n; ++i)
+        {
+            int ok = 1;
+            for (int j = 0; j < cur; ++j)
+                if (A[j] == i)
+                    ok = 0;
+            if (ok)
+            {
+                A[cur] = i;
+                print_permutation(n, A, cur + 1);
+            }
         }
-    }
 }
 
 int main() {
@@ -51,13 +54,10 @@ else for(int i = 0; i < n; ++i)
 int main() {
     int n, p[10];
     scanf("%d", &n);
-    for(int i = 0; i < n; ++i) 
-        scanf("%d", &p[i]);
+    for(int i = 0; i < n; ++i) scanf("%d", &p[i]);
     sort(p, p + n);
-    
     do {
-        for(int i = 0; i < n; ++i) 
-            printf("%d ", p[i]);
+        for(int i = 0; i < n; ++i) printf("%d ", p[i]);
         printf("\n");
     } while(next_permutation(p, p + n));
     return 0;

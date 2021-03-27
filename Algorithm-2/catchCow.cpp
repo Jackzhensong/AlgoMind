@@ -6,6 +6,7 @@ using namespace std;
 
 const int MAX = 100000;
 int visited[MAX + 10];
+
 struct Step
 {
     int x;
@@ -22,28 +23,22 @@ int main()
     memset(visited, 0, sizeof(visited));
     q.push(Step(N, 0));
     visited[N] = 1;
-    while (!q.empty())
-    {
+    while (!q.empty()) {
         Step s = q.front();
-        if (s.x == K)
-        {
+        if (s.x == K) {
             cout << s.steps << endl;
             return 0;
         }
-        else
-        {
-            if (s.x - 1 >= 0 && !visited[s.x - 1])
-            {
+        else {
+            if (s.x - 1 >= 0 && !visited[s.x - 1]) {
                 q.push(Step(s.x - 1, s.steps + 1));
                 visited[s.x - 1] = 1;
             }
-            if (s.x + 1 <= MAX && !visited[s.x + 1])
-            {
+            if (s.x + 1 <= MAX && !visited[s.x + 1]) {
                 q.push(Step(s.x + 1, s.steps + 1));
                 visited[s.x + 1] = 1;
             }
-            if (s.x * 2 <= MAX && !visited[s.x * 2])
-            {
+            if (s.x * 2 <= MAX && !visited[s.x * 2]) {
                 q.push(Step(s.x * 2, s.steps + 1));
                 visited[s.x * 2] = 1;
             }

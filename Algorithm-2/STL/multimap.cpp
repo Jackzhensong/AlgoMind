@@ -1,16 +1,20 @@
 #include <bits/stdc++.h>
 using namespace std;
+
 struct studentinfo
 {
     int id;
     char name[20];
 };
+
 struct student
 {
     int score;
     studentinfo info;
 };
+
 typedef multimap<int, studentinfo> map_std;
+
 int main()
 {
     map_std mp;

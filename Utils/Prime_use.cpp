@@ -10,17 +10,18 @@ bool isPrime(int n) {
 }
 
 
-// 找范围为: 2 ~ maxn 内的所有质数
+// 找范围为: 2 ~ N 内的所有质数
 const int maxn = 101;
 int prime[maxn];
-bool p[maxn] = {0};
+bool tag[maxn] = {0};
 
-void find_prime() {
+void find_prime(int N) {
     int num = 0;
-    for (int i = 2; i < maxn; ++i) {
-        if (!p[i]) {
+    for (int i = 2; i < N; ++i) {
+        if (!tag[i]) {
             prime[num++] = i;
-            for (int j = i * 2; j < maxn; j += i) p[j] = true;
+            for (int j = i * 2; j < maxn; j += i) 
+                tag[j] = true;
         }
     }
 }

@@ -7,14 +7,10 @@ struct word
     string wd;
 };
 
-struct rule
-{
-    bool operator()(const word &w1, const word &w2)
-    {
-        if (w1.times != w2.times)
-            return w1.times > w2.times;
-        else
-            return w1.wd < w2.wd;
+struct rule {
+    bool operator()(const word &w1, const word &w2) {
+        if (w1.times != w2.times) return w1.times > w2.times;
+        else return w1.wd < w2.wd;
     }
 };
 
@@ -23,10 +19,8 @@ int main()
     string s;
     set<word, rule> st;
     map<string, int> mp;
-    while (cin >> s)
-        ++mp[s];
-    for (map<string, int>::iterator i = mp.begin(); i != mp.end(); ++i)
-    {
+    while (cin >> s) ++mp[s];
+    for (map<string, int>::iterator i = mp.begin(); i != mp.end(); ++i) {
         word tmp;
         tmp.wd = i->first;
         tmp.times = i->second;

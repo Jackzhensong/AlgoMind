@@ -18,13 +18,10 @@ void biInsertsort(int A[], int size) {
         int key = A[i];
         while (low <= high) {
             int mid = (low + high) / 2;
-            if (A[i] < A[mid])
-                high = mid - 1;
-            else
-                low = mid + 1;
+            if (A[i] < A[mid]) high = mid - 1;
+            else low = mid + 1;
         }
-        for (int j = i - 1; j > high; j--)
-            A[j + 1] = A[j];
+        for (int j = i - 1; j > high; j--) A[j + 1] = A[j];
         A[high + 1] = key;
     }
 }

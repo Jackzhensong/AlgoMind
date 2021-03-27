@@ -12,8 +12,7 @@ void mult(char c[], char t[], int m) {
     char s[100];
     len = strlen(c);
 
-    for(i = 0; i < len; ++ i) 
-        s[len - i - 1] = c[i] - '0';
+    for(i = 0; i < len; ++ i) s[len - i - 1] = c[i] - '0';
     for(i = 0; i < len; ++ i) {
         k = s[i] * m + add;
         if(k >= 10) {

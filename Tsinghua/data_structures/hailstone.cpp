@@ -31,8 +31,7 @@ int Sum(int A[], int n) {
 
 // 数组求和：二分递归
 int Sum2(int A[], int lo, int hi) {     // 区间范围 A[lo, hi]
-    if (lo == hi)
-        return A[lo];
+    if (lo == hi) return A[lo];
     int mi = (lo + hi) >> 1;
     return Sum2(A, lo, mi) + Sum2(A, mi + 1, hi);
 }   // 入口形式 Sum2(A, 0, n-1)

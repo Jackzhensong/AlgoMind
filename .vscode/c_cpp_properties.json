@@ -18,7 +18,7 @@
                 "__GNUC__=6",
                 "__cdecl=__attribute__((__cdecl__))"
             ],
-            "intelliSenseMode": "${default}",
+            "intelliSenseMode": "gcc-x64",
             "browse": {
                 "path": [
                     "${workspaceRoot}",
@@ -30,7 +30,7 @@
                     "C:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include"
                 ]
             },
-            "compilerPath": "C:\\mingw64\\bin\\gcc.exe",
+            "compilerPath": "C:/mingw64/bin/gcc.exe",
             "cStandard": "c11",
             "cppStandard": "gnu++14"
         }
